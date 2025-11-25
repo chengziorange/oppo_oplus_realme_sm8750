@@ -85,6 +85,9 @@ on:
         type: string
         default: ''
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -800,3 +803,5 @@ jobs:
           prerelease: false
           files: |
             release_zips/AnyKernel3_*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
